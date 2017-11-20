@@ -49,4 +49,18 @@ Create the following file: /root/kubo-deployment/manifests/ops-files/vsphere-clo
   
   Deploy the K8s using the typical process.
   
+  ## Create kubevols directory on the datastore
   
+  on datastore NFS-LAB-DATASTORE, we need to create the directory kubevols.
+  
+  SSH to ESXi host
+  ```
+   cd /vmfs
+   cd volumes/
+   cd NFS-LAB-DATASTORE/
+   mkdir kubevols
+ ```
+ 
+ ## Deploy the GuestBook application
+ 
+ 

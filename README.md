@@ -28,7 +28,9 @@ Create the following file: /root/kubo-deployment/manifests/ops-files/vsphere-clo
   value: *vsphere_cloud_provider
   ```
   
-  Modify the 13-create-kubo-deployment-1.sh script:
+  Modify the 13-create-kubo-deployment-1.sh script to include the vsphere-cloud-provider.yml file:
+  
+  13-create-kubo-deployment-1.sh:
   ```
   /usr/local/bin/bosh int manifests/kubo.yml \
      -o manifests/ops-files/master-haproxy-vsphere.yml \
@@ -42,7 +44,7 @@ Create the following file: /root/kubo-deployment/manifests/ops-files/vsphere-clo
      -v deployment_name=mykubocluster-1 \
      -v worker_haproxy_tcp_frontend_port=1234 \
      -v worker_haproxy_tcp_backend_port=4231 > mykubo-1.yml
-     ```
+  ```
      
   
   Deploy the K8s using the typical process.

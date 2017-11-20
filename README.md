@@ -105,7 +105,7 @@ kubectl get pod
 kubectl get svc
 ```
 
-To connect to GuestBook application:
+To connect to GuestBook application (the application uses K8s Service with type=NodePort):
 
-http://node IP:node Port
+http://[node IP]:[node Port]
 

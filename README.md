@@ -106,5 +106,6 @@ kubectl get svc
 ```
 
 To connect to GuestBook application:
+
 http://node IP:node Port
 

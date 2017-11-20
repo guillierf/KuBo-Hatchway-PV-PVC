@@ -64,3 +64,47 @@ Create the following file: /root/kubo-deployment/manifests/ops-files/vsphere-clo
  ## Deploy the GuestBook application
  
  
+Deploy Redis Storage Class:
+```
+kubectl create -f redis-sc.yaml
+```
+
+Check:
+```
+kubectl get sc
+```
+
+Deploy Redis Master and Redis Slave PV:
+```
+kubectl create -f redis-master-pv.yaml -f redis-slave-pv.yaml
+```
+
+Check:
+```
+kubectl get pv
+```
+
+Deploy Redis Master and Redis Slave PVC:
+```
+kubectl create -f redis-master-claim.yaml -f redis-slave-claim.yaml
+```
+
+Check:
+```
+kubectl get pvc
+```
+
+Deploy GuestBook application:
+```
+kubectl create -f guestbook-all-in-one.yaml
+```
+
+Check:
+```
+kubectl get pod
+kubectl get svc
+```
+
+To connect to GuestBook application:
+http://<node IP>:<node Port>
+
